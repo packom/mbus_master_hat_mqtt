@@ -118,6 +118,7 @@ def mbus_hat_check():
 def mqtt_connect():
   global client, connected
   client = mqtt.Client(protocol=mqtt.MQTTv31)
+  client.username_pw_set(mqtt_username, mqtt_password):q!
   client.on_connect = on_connect
   client.on_message = on_message
   client.on_disconnect = on_disconnect
@@ -147,7 +148,7 @@ def on_disconnect(client, userdata, rc):
 
 # Query the M-Bus
 def on_message(client, userdata, msg):
-  print msg
+  print(msg)
   if msg.payload.startswith(read_command):
     mbus_query()
   else:
