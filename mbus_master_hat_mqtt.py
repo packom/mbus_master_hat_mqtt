@@ -23,7 +23,7 @@
 #
 # To install pre-requisite python modules:
 #
-# sudo apt install python-pip
+# sudo apt -y install python3-pip
 # git clone https://github.com/ganehag/pyMeterBus
 # cd pyMeterBus && sudo python setup.py install && cd ..
 # sudo pip install paho-mqtt
