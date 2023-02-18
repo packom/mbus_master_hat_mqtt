@@ -13,6 +13,11 @@
 # Address or hostname of MQTT broker
 mqtt_addr = 'mosquitto'
 
+# Username and password of MQTT broker
+mqtt_username = 'username'
+mqtt_password = 'password'
+
+
 # Primary address of M-Bus slave to read
 slave_address = 48
 
