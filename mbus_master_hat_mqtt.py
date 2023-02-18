@@ -23,7 +23,7 @@
 #
 # To install pre-requisite python modules:
 #
-# sudo apt install python-pip
+# sudo apt -y install python3-pip
 # git clone https://github.com/ganehag/pyMeterBus
 # cd pyMeterBus && sudo python setup.py install && cd ..
 # sudo pip install paho-mqtt
@@ -149,7 +149,7 @@ def on_disconnect(client, userdata, rc):
 # Query the M-Bus
 def on_message(client, userdata, msg):
   print(msg)
-  if msg.payload.startswith(read_command):
+  if msg.payload.startswith(read_command.encode()):
     mbus_query()
   else:
     client.publish(post_topic, "unknown command")
