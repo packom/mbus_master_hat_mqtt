@@ -147,8 +147,8 @@ def on_disconnect(client, userdata, rc):
 
 # Query the M-Bus
 def on_message(client, userdata, msg):
-  print msg
-  if msg.payload.startswith(read_command):
+  print(msg)
+  if msg.payload.startswith(read_command.encode()):
     mbus_query()
   else:
     client.publish(post_topic, "unknown command")
